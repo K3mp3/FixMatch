@@ -1,0 +1,114 @@
+@use './abstracts/colors' as *;
+@use './abstracts/fonts' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+:root {
+  --primary-color: #0078d7 !important;
+  --primary-lighter-color: rgba(0, 120, 215, 0.2) !important;
+  --primary-darker-color: #0067be !important;
+}
+
+.p-datepicker .p-inputtext {
+  padding: 10px; /* Adjust padding as needed */
+}
+
+.p-datepicker-panel {
+  margin-top: 18px;
+}
+
+.p-datepicker-day-selected {
+  background-color: $sky-blue;
+  color: $sky-white;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  // min-height: 100vh;
+  color: $sky-white;
+  background: $bg-main;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// nav {
+//   position: fixed;
+//   z-index: 1;
+//   width: 100%;
+// }
+
+header {
+  position: relative;
+}
+
+h1,
+h2,
+h3 {
+  color: $text-main;
+  font-family: map-get($font-title-black, font-family);
+  font-weight: map-get($font-title-black, font-weight);
+}
+
+strong {
+  color: $text-main;
+  font-family: map-get($font-title-bold, font-family);
+  font-weight: map-get($font-title-bold, font-weight);
+}
+
+p,
+label,
+span {
+  color: $text-main;
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-mobile-checkbox {
+  background: transparent;
+  border: 2px solid red;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove spinner buttons for Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

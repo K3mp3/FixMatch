@@ -1,0 +1,643 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
+
+.nav-hamburger-icon {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 0;
+    padding: 10px;
+    padding-right: 7px;
+    background: transparent;
+    margin-right: -5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  span {
+    transition: all 0.2s ease-in-out;
+    width: 25px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: $text-main;
+    border: none;
+
+    &:nth-child(1) {
+      width: 45%;
+    }
+
+    &:nth-child(3) {
+      width: 75%;
+      margin-left: 25%;
+    }
+  }
+
+  .span-nr1 {
+    transition: all 0.2s ease-in-out;
+    transform-origin: bottom;
+    transform: rotatez(45deg) translate(2px, 1px);
+  }
+
+  .span-nr2 {
+    transition: all 0.2s ease-in-out;
+    transform: rotate(-45deg);
+  }
+
+  .span-nr3 {
+    transition: all 0.2s ease-in-out;
+    transform-origin: bottom;
+    transform: rotatez(45deg) translate(-5px, -3.4px);
+  }
+
+  .animation {
+    transition: all 0.2s ease-in-out;
+    background-color: $sky-green;
+    span:nth-child(2) {
+      transform: rotate(-45deg);
+    }
+
+    button {
+      gap: 0px;
+    }
+
+    span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    span:nth-child(3) {
+      transform: rotate(45deg);
+      margin-left: 9px;
+    }
+  }
+}
+
+// Styling
+.white-line {
+  width: 100%;
+  height: 1px;
+  // background: linear-gradient(to right, #090909, #a5a5a5, #090909);
+  background-color: $sky-ultra-light-blue;
+  margin: auto;
+}
+
+.gray-line {
+  width: 100%;
+  height: 1px;
+  background-color: $gray-100;
+  margin: auto;
+}
+
+.gray-line-vertical {
+  width: 1px;
+  height: 100%;
+  background-color: $gray-100;
+  margin: auto;
+}
+
+.graph {
+  width: 100%;
+  border: 3px solid transparent;
+  border-radius: 8px 8px 0 0;
+  background-image: linear-gradient($bg-main, $bg-main),
+    linear-gradient(to bottom, rgb(50, 71, 209), rgba(50, 71, 209, 0.5), rgba(50, 71, 209, 0));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: height 0.3s ease;
+}
+
+.graph-container:hover {
+  .graph-1 {
+    animation: heightChange1 1s ease-in-out forwards;
+  }
+  .graph-2 {
+    animation: heightChange2 1s ease-in-out forwards;
+  }
+  .graph-3 {
+    animation: heightChange3 1s ease-in-out forwards;
+  }
+  .graph-4 {
+    animation: heightChange4 1s ease-in-out forwards;
+  }
+  .graph-5 {
+    animation: heightChange5 1s ease-in-out forwards;
+  }
+}
+
+.gradient-sky-white {
+  background: linear-gradient(to right, $sky-white, $text-third);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.response-dialog-success {
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
+  background-color: $bg-main;
+  padding: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+}
+
+.response-dialog-fail {
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
+  background-color: $bg-main;
+  padding: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+// Assets
+
+.spinner-component {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  background-color: $bg-main-20;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  height: 332px;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid #0000;
+  border-radius: 12px;
+  background:
+    linear-gradient($bg-main, $bg-main) padding-box,
+    linear-gradient(
+        var(--angle),
+        $el-border-gray,
+        $el-border-gray,
+        $el-border-gray,
+        $el-border-gray,
+        $sky-green
+      )
+      border-box;
+  animation: 6s rotate linear infinite;
+}
+
+// Buttons
+
+.star-btn {
+  transition: all 0.2s ease-in-out;
+  background: transparent;
+  border: none;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  border: 2px solid transparent;
+  background-image: linear-gradient($bg-third, $bg-third),
+    linear-gradient(
+      to bottom right,
+      rgb(33, 218, 107),
+      rgb(33, 218, 107),
+      rgba(33, 218, 107, 0.616)
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: $sky-green;
+    box-shadow: 0 0 12px $sky-green;
+  }
+}
+
+.main-btn {
+  transition: all 0.2s ease-in-out;
+  background-color: $sky-blue;
+  border: none;
+  font-size: 1rem;
+  height: 42px;
+  border-radius: 50px;
+  position: relative;
+  color: $sky-white;
+  width: 100%;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+}
+
+.main-btn-disabled {
+  transition: all 0.2s ease-in-out;
+  background-color: $sky-disabled;
+  border: none;
+  font-size: 1rem;
+  height: 42px;
+  border-radius: 50px;
+  width: 100%;
+  color: $text-disabled;
+}
+
+.secondary-btn {
+  transition: all 0.2s ease-in-out;
+  background-color: $sky-white;
+  border: none;
+  font-size: 1rem;
+  height: 42px;
+  border-radius: 50px;
+  position: relative;
+  color: $text-main;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: $sky-green;
+    box-shadow: 0 0 11px $sky-green;
+    transform: scale(1.02);
+  }
+}
+
+.secondary-btn-white-hover {
+  transition: all 0.1s ease-in-out;
+  background-color: $sky-white;
+  border: none;
+  font-size: 1rem;
+  height: 42px;
+  border-radius: 50px;
+  color: $text-main;
+
+  &:hover {
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transform: scale(1.02);
+  }
+}
+
+.warning-btn {
+  transition: all 0.2s ease-in-out;
+  background-color: $warning-orange;
+  border: none;
+  font-size: 1rem;
+  height: 42px;
+  border-radius: 50px;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: $warning-orange;
+    box-shadow: 0 0 11px $warning-orange;
+    position: relative;
+    overflow: hidden;
+    transform: scale(1.02);
+  }
+}
+
+.error-btn {
+  transition: all 0.2s ease-in-out;
+  background-color: $error-red-full;
+  border: none;
+  font-size: 1rem;
+  height: 42px;
+  border-radius: 50px;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: $error-red-full;
+    box-shadow: 0 0 11px $error-red-full;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.main-btn-glow {
+  background-color: $sky-green;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transition: all 0.2s ease;
+    box-shadow: none;
+    box-shadow: 0 0 15px $sky-green;
+    &::before {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.btn-back {
+  background: transparent;
+  color: $sky-white;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 2px solid $el-border-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+
+  &:focus,
+  &:active,
+  &:hover {
+    cursor: pointer;
+    color: $sky-light-blue;
+    border: 2px solid $sky-light-blue;
+    background-color: $el-border-gray-focus;
+  }
+}
+
+.btn-back-light {
+  background: transparent;
+  color: $text-main;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 2px solid $el-border-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+
+  &:focus,
+  &:active,
+  &:hover {
+    cursor: pointer;
+    color: $sky-light-blue;
+    border: 2px solid $sky-light-blue;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.05);
+  }
+}
+
+.border-button {
+  width: 100%;
+  padding: 8px;
+  color: $sky-blue;
+  border: 2px solid $sky-white;
+  background-color: transparent;
+  border-radius: 22px;
+  resize: none;
+  font-family: map-get($font-text-light, font-family);
+  font-weight: map-get($font-text-light, font-weight);
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.02);
+  }
+}
+
+.border-button-light {
+  width: 100%;
+  padding: 8px;
+  color: $sky-blue;
+  border: 2px solid $sky-white;
+  background-color: transparent;
+  border-radius: 22px;
+  resize: none;
+  font-family: map-get($font-text-light, font-family);
+  font-weight: map-get($font-text-light, font-weight);
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.02);
+  }
+}
+
+.border-button-active {
+  width: 100%;
+  padding: 8px;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  border: 2px solid transparent;
+  background-image: linear-gradient($el-border-gray-focus, $el-border-gray-focus),
+    linear-gradient(to bottom, rgb(33, 218, 107), rgb(33, 218, 107, 0.2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 10px;
+}
+
+.border-button-active-light {
+  width: 100%;
+  padding: 8px;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  border: 2px solid transparent;
+  background-image: linear-gradient($sky-white, $sky-white),
+    linear-gradient(to bottom, rgb(74, 74, 220), rgb(74, 74, 220, 0.2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 10px;
+}
+
+.btn-close {
+  background: transparent;
+  color: $sky-white;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  border: 2px solid $el-border-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+
+  &:focus,
+  &:active,
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.router-link {
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: $sky-blue;
+  }
+}
+
+// Stripe
+
+.stripe-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $bg-main-40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  color: $sky-white;
+  overflow-y: auto;
+  padding: 20px 0;
+}
+
+.stripe-modal-container {
+  background-color: rgb(35, 35, 35);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: $sky-white;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: auto;
+  position: relative;
+}
+
+.stripe-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid rgb(15, 15, 15);
+  position: sticky; /* Keep the header visible when scrolling */
+  top: 0;
+  background-color: rgb(35, 35, 35); /* Match container background */
+  z-index: 2; /* Ensure header stays above content */
+}
+
+.stripe-modal-body {
+  padding: 20px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: $sky-white; /* Ensure visibility */
+}
+
+.error-message {
+  color: $error-red-full;
+  margin-top: 12px;
+}
+
+@keyframes heightChange1 {
+  0%,
+  100% {
+    height: 112px;
+  }
+  50% {
+    height: 144px;
+  }
+}
+
+@keyframes heightChange2 {
+  100% {
+    height: 144px;
+  }
+  50% {
+    height: 112px;
+  }
+}
+
+@keyframes heightChange3 {
+  100% {
+    height: 80px;
+  }
+  50% {
+    height: 112px;
+  }
+}
+
+@keyframes heightChange4 {
+  100% {
+    height: 208px;
+  }
+  50% {
+    height: 176px;
+  }
+}
+
+@keyframes heightChange5 {
+  100% {
+    height: 264px;
+  }
+  50% {
+    height: 176px;
+  }
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@media screen and (min-width: 357px) {
+  .box {
+    height: 284px;
+  }
+}
+
+@media screen and (min-width: 448px) {
+  .box {
+    height: 264px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .graph {
+    border-radius: 11px 11px 0 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .graph {
+    border-radius: 13px 13px 0 0;
+  }
+}

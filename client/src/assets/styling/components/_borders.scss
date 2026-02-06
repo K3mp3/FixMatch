@@ -1,0 +1,70 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
+
+.border-main {
+  border: 1px solid $gray-100;
+}
+
+.border-bottom-main {
+  border-bottom: 2px solid $bg-light-gray;
+}
+
+.border-top-main {
+  border-top: 2px solid $bg-light-gray;
+}
+
+.border-gr-success {
+  border: 2px solid transparent;
+  background-image: linear-gradient($sky-white, $sky-white),
+    linear-gradient(to bottom, rgb(33, 218, 107), rgb(33, 218, 107, 0.2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.border-gr-blue {
+  border: 2px solid transparent;
+  background-image: linear-gradient($sky-white, $sky-white),
+    linear-gradient(to bottom, rgb(77, 116, 255), rgb(77, 116, 255, 0.2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.border-green {
+  border: 2px solid $sky-green;
+}
+
+.border-blue {
+  border: 2px solid $sky-blue;
+}
+
+.border-light-blue {
+  border: 2px solid $sky-light-blue;
+}
+
+.border-gr-warning {
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-image: linear-gradient($sky-white, $sky-white),
+    linear-gradient(to bottom, rgb(241, 85, 13), rgba(241, 85, 13, 0.2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.border-gr-error {
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-image: linear-gradient($sky-white, $sky-white),
+    linear-gradient(to bottom, rgb(236, 23, 23), rgba(236, 23, 23, 0.2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.shadow-top {
+  box-shadow:
+    0 -4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+}

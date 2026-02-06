@@ -1,0 +1,98 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
+
+.bg-main {
+  background-color: $bg-main;
+}
+
+.bg-secondary {
+  background-color: $bg-secondary;
+}
+
+.bg-secondary-90 {
+  background-color: $bg-secondary-90;
+}
+
+.bg-main-90 {
+  background-color: $bg-main-90;
+}
+
+.bg-main-40 {
+  background-color: $bg-main-40;
+}
+
+.bg-main-20 {
+  background-color: $bg-main-20;
+}
+
+.bg-sky-gray {
+  background-color: $sky-gray;
+}
+
+.bg-light-gray {
+  background-color: $bg-light-gray;
+}
+
+.bg-gray {
+  background-color: $bg-gray;
+}
+
+.gray-100 {
+  background-color: $gray-100;
+}
+
+.blue-100 {
+  background-color: $blue-100;
+}
+
+.green-100 {
+  background-color: $green-100;
+}
+
+.red-100 {
+  background-color: $red-100;
+}
+
+.yellow-100 {
+  background-color: $yellow-100;
+}
+
+.bg-sky-gray-matte {
+  background-color: $sky-gray-matte;
+}
+
+.bg-sky-white {
+  background-color: $sky-white;
+}
+
+.bg-sky-white-60 {
+  background-color: $sky-white-60;
+}
+
+.bg-sky-green {
+  background-color: $sky-green;
+}
+
+.bg-sky-light-blue {
+  background-color: $sky-light-blue;
+}
+
+.bg-sky-blue {
+  background-color: $sky-blue;
+}
+
+.bg-sky-blue-gr {
+  background: linear-gradient(to right, $sky-blue, $sky-purple);
+}
+
+.bg-sky-light-blue-gr {
+  background: linear-gradient(to right, $blue-200, $sky-white);
+}
+
+.bg-sky-red {
+  background-color: $el-error-red;
+}
+
+.bg-transparent {
+  background: transparent;
+}

@@ -1,0 +1,76 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.text-sky-green {
+  color: $sky-green;
+}
+
+.text-sky-blue {
+  color: $sky-blue;
+}
+
+.text-sky-light-blue {
+  color: $sky-light-blue;
+}
+
+.text-sky-blue {
+  color: $sky-blue;
+}
+
+.text-sky-yellow {
+  color: $sky-yellow;
+}
+
+.text-main {
+  color: $text-main;
+}
+
+.text-secondary {
+  color: $sky-white;
+}
+
+.text-third {
+  color: $text-third;
+}
+
+.text-disabled {
+  color: $text-disabled;
+}
+
+.text-warning-orange {
+  color: $warning-orange;
+}
+
+.text-error-red-full {
+  color: $error-red-full;
+}
+
+.hover-sky-blue {
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: $sky-blue;
+  }
+}
+
+.inter-normal {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-title-black {
+  font-family: map-get($font-title-black, font-family);
+  font-weight: map-get($font-title-black, font-weight);
+}
+
+.font-title-bold {
+  font-family: map-get($font-title-bold, font-family);
+  font-weight: map-get($font-title-bold, font-weight);
+}
+
+.font-text-light {
+  font-family: map-get($font-text-light, font-family);
+  font-weight: map-get($font-text-light, font-weight);
+}

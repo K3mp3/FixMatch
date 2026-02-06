@@ -1,0 +1,146 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
+
+.textarea-input {
+  width: 100%;
+  padding: 8px;
+  color: $sky-white;
+  border: 1px solid $el-border-gray;
+  background-color: $sky-gray;
+  border-radius: 10px;
+  resize: none;
+  font-family: map-get($font-text-light, font-family);
+  font-weight: map-get($font-text-light, font-weight);
+  font-size: 1rem;
+
+  &:focus {
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    border: 1px solid transparent;
+    background-image: linear-gradient($el-border-gray-focus, $el-border-gray-focus),
+      linear-gradient(to bottom, rgb(85, 90, 213), rgb(85, 90, 213, 0.2));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+}
+
+.textarea-input-light {
+  width: 100%;
+  padding: 8px;
+  color: $text-main;
+  border: 1px solid transparent;
+  background-color: $sky-white;
+  border-radius: 10px;
+  resize: none;
+  font-family: map-get($font-text-light, font-family);
+  font-weight: map-get($font-text-light, font-weight);
+  font-size: 1rem;
+  border: 1px solid $gray-100;
+}
+
+.textarea-input-warning {
+  width: 100%;
+  padding: 8px;
+  color: $sky-white;
+  border: 1px solid $el-border-gray;
+  background-color: $bg-gray;
+  border-radius: 10px;
+  resize: none;
+  font-family: map-get($font-text-light, font-family);
+  font-weight: map-get($font-text-light, font-weight);
+  font-size: 1rem;
+}
+
+.text-input {
+  transition: all 0.2s ease-in-out;
+  height: 41px;
+  border: 1px solid $el-border-gray;
+  background-color: $bg-gray;
+  color: $sky-white;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.text-input-light {
+  transition: all 0.2s ease-in-out;
+  height: 41px;
+  border: 1px solid transparent;
+  color: $text-main;
+  background-color: $sky-white;
+  border-radius: 10px;
+  font-size: 1rem;
+  border: 1px solid $gray-100;
+}
+
+.input-warning {
+  transition: all 0.2s ease-in-out;
+  height: 41px;
+  color: $sky-white;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-image: linear-gradient($el-border-gray-focus, $el-border-gray-focus),
+    linear-gradient(to bottom, rgb(241, 85, 13), rgba(241, 85, 13, 0.2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.input-warning-light {
+  transition: all 0.2s ease-in-out;
+  height: 41px;
+  color: $text-main;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-image: linear-gradient($sky-white, $sky-white),
+    linear-gradient(to bottom, rgb(241, 85, 13), rgba(241, 85, 13, 0.2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 1px solid $gray-100;
+}
+
+.input-error {
+  transition: all 0.2s ease-in-out;
+  height: 41px;
+  color: $sky-white;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-image: linear-gradient($el-border-gray-focus, $el-border-gray-focus),
+    linear-gradient(to bottom, rgb(241, 13, 13), rgb(241, 13, 13, 0.2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.select {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  width: calc(100vw - 31px);
+  height: 41px;
+  background-color: $bg-gray;
+  color: $sky-white;
+  border: 1px solid $el-border-gray;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.select-light {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  width: calc(100vw - 31px);
+  height: 41px;
+  background-color: $sky-white;
+  color: $text-main;
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1;
+  border: 1px solid $gray-100;
+}
