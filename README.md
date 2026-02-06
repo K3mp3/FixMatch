@@ -28,23 +28,34 @@ FixMatch is a modern platform designed to bridge the gap between vehicle owners 
 
 ## 🛠 Tech Stack
 
+### Frontend (Client)
+
 - **Framework**: [Vue 3](https://vuejs.org/) (Composition API)
 - **Build Tool**: [Vite](https://vitejs.dev/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **State Management**: [Pinia](https://pinia.vuejs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/), SCSS, [PrimeVue](https://primevue.org/)
-- **Backend/Auth**: [Firebase](https://firebase.google.com/)
 - **Maps**: [Mapbox GL JS](https://www.mapbox.com/)
 - **Mobile**: [Capacitor](https://capacitorjs.com/)
-- **Payments**: [Stripe](https://stripe.com/)
-- **Testing**: Cypress, Vitest
+
+### Backend (Server)
+
+- **Runtime**: [Node.js](https://nodejs.org/)
+- **Framework**: [Express.js](https://expressjs.com/)
+- **Database**: [MongoDB](https://www.mongodb.com/) (via [Mongoose](https://mongoosejs.com/))
+- **Authentication**: [Firebase Admin](https://firebase.google.com/docs/admin/setup)
+- **Payment**: [Stripe](https://stripe.com/)
+- **Email**: Nodemailer, Resend, Mailtrap
 
 ## 📦 Prerequisites
 
-- Node.js (v18+ recommended)
-- npm or pnpm
+- Node.js (v20+ recommended)
+- npm or pnpm (pnpm is used in the server)
+- MongoDB instance (local or Atlas)
 
 ## 🔧 Installation
+
+### Client Setup
 
 1. Navigate to the client directory:
 
@@ -59,41 +70,70 @@ FixMatch is a modern platform designed to bridge the gap between vehicle owners 
    ```
 
 3. Environment Setup:
-   Ensure you have the necessary environment variables set up (e.g., Firebase config, Mapbox token, Stripe keys).
+   Create a `.env` file in the `client` directory with necessary keys (Firebase, Mapbox, Stripe).
+
+### Server Setup
+
+1. Navigate to the server directory:
+
+   ```bash
+   cd server
+   ```
+
+2. Install dependencies (using pnpm):
+
+   ```bash
+   npm install -g pnpm
+   pnpm install
+   ```
+
+3. Environment Setup:
+   Create a `.env` file in the `server` directory. Required variables typically include:
+   - `PORT`
+   - `MONGODB_URI`
+   - `STRIPE_SECRET_KEY`
+   - `FIREBASE_ADMIN_CREDENTIALS`
+   - Email service credentials
 
 ## 🏃‍♂️ Running the Project
 
-### Development
+### Start Client
 
 Start the development server with hot-reload:
 
 ```bash
+cd client
 npm run dev
 ```
 
-### Production Build
+### Start Server
 
-Build the project for production:
+Start the backend server:
 
 ```bash
-npm run build
+cd server
+npm run dev
 ```
 
 ### Mobile Development (iOS)
 
-Sync and open the iOS project:
+Sync and open the iOS project (from client directory):
 
 ```bash
+cd client
 npx cap sync ios
 npx cap open ios
 ```
 
 ## 📂 Project Structure
 
-- `src/components`: Reusable UI components organized by feature (Nav, Dialogs, Forms, etc.).
-- `src/views`: Page-level components (Landing, Admin, UserHome, etc.).
-- `src/stores`: Pinia state management modules.
-- `src/services`: API service layers (Firebase interactions, Authentication, etc.).
-- `src/assets`: Static assets, global styles, and visualizations.
-- `src/models`: TypeScript interfaces and types for type safety.
-- `src/composables`: Shared logic and Vue composables (e.g., SEO).
+- **`client/`**: Vue 3 frontend application.
+  - `src/components`: Reusable UI components.
+  - `src/views`: Page-level components.
+  - `src/stores`: Pinia state management.
+  - `src/services`: API and Firebase services.
+- **`server/`**: Express.js backend API.
+  - `routes/`: API route definitions.
+  - `models/`: Mongoose data models.
+  - `components/`: Scheduled tasks and utilities.
+  - `email-templates/`: Templates for transactional emails.
