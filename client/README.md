@@ -1,39 +1,99 @@
 # FixMatch
 
-This template should help get you started developing with Vue 3 in Vite.
+FixMatch is a modern platform designed to bridge the gap between vehicle owners and repair shops. It streamlines the process of finding reliable mechanics, booking services, and managing repair jobs.
 
-## Recommended IDE Setup
+## 🚀 Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### For Vehicle Owners
 
-## Type Support for `.vue` Imports in TS
+- **Easy Job Creation**: Submit repair requests with details about your vehicle and the issue.
+- **Find Repair Shops**: Browse and locate nearby repair shops using an interactive map.
+- **Booking System**: Schedule appointments directly through the platform.
+- **Compare Offers**: Receive and compare quotes from different workshops.
+- **User Dashboard**: Manage bookings, requests, and received offers.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### For Repair Shops
 
-## Customize configuration
+- **Business Profile**: Manage your shop's presence, services, and opening hours.
+- **Job Board**: View available repair jobs in your area and submit offers.
+- **Booking Management**: Dedicated dashboard to handle incoming appointments.
+- **Subscription Plans**: Manage business subscriptions and features.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### General
 
-## Project Setup
+- **Real-time Messaging**: Communication channel between owners and shops.
+- **Mobile Support**: Optimized for mobile devices with Capacitor support (iOS/Android).
+- **Secure Payments**: Integrated with Stripe for secure transactions.
+- **Interactive Visuals**: 3D visualization using Three.js and Mapbox.
 
-```sh
-npm install
-```
+## 🛠 Tech Stack
 
-### Compile and Hot-Reload for Development
+- **Framework**: [Vue 3](https://vuejs.org/) (Composition API)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **State Management**: [Pinia](https://pinia.vuejs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/), SCSS, [PrimeVue](https://primevue.org/)
+- **Backend/Auth**: [Firebase](https://firebase.google.com/)
+- **Maps**: [Mapbox GL JS](https://www.mapbox.com/)
+- **Mobile**: [Capacitor](https://capacitorjs.com/)
+- **Payments**: [Stripe](https://stripe.com/)
+- **Testing**: Cypress, Vitest
 
-```sh
+## 📦 Prerequisites
+
+- Node.js (v18+ recommended)
+- npm or pnpm
+
+## 🔧 Installation
+
+1. Navigate to the client directory:
+
+   ```bash
+   cd client
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Environment Setup:
+   Ensure you have the necessary environment variables set up (e.g., Firebase config, Mapbox token, Stripe keys).
+
+## 🏃‍♂️ Running the Project
+
+### Development
+
+Start the development server with hot-reload:
+
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Production Build
 
-```sh
+Build the project for production:
+
+```bash
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Mobile Development (iOS)
 
-```sh
-npm run lint
+Sync and open the iOS project:
+
+```bash
+npx cap sync ios
+npx cap open ios
 ```
+
+## 📂 Project Structure
+
+- `src/components`: Reusable UI components organized by feature (Nav, Dialogs, Forms, etc.).
+- `src/views`: Page-level components (Landing, Admin, UserHome, etc.).
+- `src/stores`: Pinia state management modules.
+- `src/services`: API service layers (Firebase interactions, Authentication, etc.).
+- `src/assets`: Static assets, global styles, and visualizations.
+- `src/models`: TypeScript interfaces and types for type safety.
+- `src/composables`: Shared logic and Vue composables (e.g., SEO).
